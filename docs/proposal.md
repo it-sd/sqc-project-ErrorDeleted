@@ -16,10 +16,10 @@ Web Service
 
 Database Use
 ------------
-*Users* | Database would need to read and write profile/account informaion.
-*Items* | Would keep track of item information (basic/scratch)
-*MarketItems* | The database would keep track of all items up for sale. *FK Items*
-*Cart* | The database would hold cart information for each account. *FK Users*
+*Users* | Database would need to read and write profile/account informaion.  
+*Items* | Would keep track of item information (basic/scratch)  
+*MarketItems* | The database would keep track of all items up for sale. *FK Items*  
+*Cart* | The database would hold cart information for each account. *FK Users*  
 
 Initial Designs
 --------------
