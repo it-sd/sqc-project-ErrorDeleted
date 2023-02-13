@@ -1,0 +1,23 @@
+{
+  "name": "sqc-project-errordeleted",
+  "version": "1.0.0",
+  "description": "Maldach1",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/it-sd/sqc-project-ErrorDeleted.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/it-sd/sqc-project-ErrorDeleted/issues"
+  },
+  "homepage": "https://github.com/it-sd/sqc-project-ErrorDeleted#readme"
+}
