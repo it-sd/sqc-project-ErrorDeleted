@@ -1,5 +1,4 @@
 require('dotenv').config() // Read variables from .env
-const exp = require('constants')
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5163
