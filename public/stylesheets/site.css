@@ -9,7 +9,7 @@ body {
 header {
   margin: auto;
 }
-.removeLink {
+a {
   cursor: alias;
   text-decoration: none;
 }
