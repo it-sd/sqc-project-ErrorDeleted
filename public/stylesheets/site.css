@@ -4,22 +4,36 @@ html {
 body {
   background-color: white;
   background-image: linear-gradient(#8c68ba, #674099);
-  padding: 50px, 0, 50px, 0;
+  margin: auto;
+  position: relative;
 }
 header {
-  margin: auto;
+  text-align: center;
+  background-color: black;
 }
 a {
-  cursor: alias;
   text-decoration: none;
+}
+nav {
+  margin: -15px;
+  padding: auto;
 }
 nav a {
   background-color: #d4d4d4;
   text-decoration: none;
   text-align: center;
   color: black;
-  padding: 0 20px;
+  padding: 0 10px;
   display: block;
+}
+ul {
+  list-style-type: none;
+  /* margin: 0; */
+  padding: 0;
+  background-color: #d4d4d4;
+}
+li {
+  display: inline-block;
 }
 #mainNav {
   color: #50a3a0;
@@ -32,8 +46,17 @@ p {
   text-align: center;
   font-size: 25px;
   display: block;
+  padding: 0 10px;
+}
+main {
+  clear: both;
+}
+blockquote {
+  text-align: center;
 }
 footer {
   background-color: #c7c7c7;
   margin: auto;
+  text-align: center;
+  margin: -25px;
 }
