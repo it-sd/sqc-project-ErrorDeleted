@@ -12,3 +12,5 @@ This is inspired from [Warframe Market](https://warframe.market)
 *approuch.*
 
 [Render](https://warframe-market.onrender.com)
+
+dhaley4 can handle rejection.
