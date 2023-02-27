@@ -1,4 +1,31 @@
 <!DOCTYPE html>
+<span id="bnSPopUp">
+  <button id="xButton" type="button"><img id="xButtonImg" src="/images/xButton.png"></button>
+  <h1>Place an Order for...</h1>
+  <button id="buy" type="button">Buy</button>
+  <button id="sell" type="button">Sell</button>
+  <p class="bnSinput">Name:<input type="text" placeholder="Name of product"></p>
+  <p class="bnSinput">Quanity:<input type="text" placeholder="Amount of product"></p>
+  <p class="bnSinput">Price:<input type="text" placeholder="Price per product"></p>
+  <button id="submit" type="button">Post Request</button>
+</span>
+<button id="bnSButton" type="button"><img id="buttonImg" src="/images/buy&SellButton.png"></button>
+<script>
+  //-\\ ** Event listeners for ALL button events ** //-\\
+  const bnSButton = document.getElementById("bnSButton")
+  const bnSPopUp = document.getElementById("bnSPopUp")
+  const xButton = document.getElementById("xButton")
+  const submit = document.getElementById("submit")
+  // BuynSell button (Right Corner) -> Popup Open
+  bnSButton.addEventListener("click", function() {
+    bnSPopUp.setAttribute('style', 'visibility: visible')
+  });
+  // PopUp -> Closed
+  xButton.addEventListener("click", function() {
+    bnSPopUp.setAttribute('style', 'visibility: hidden')
+  });
+  // Submit Comming Soon
+</script>
 <footer>
   <h2>About</h2>
   <p>This is a footer in progress :D</p>

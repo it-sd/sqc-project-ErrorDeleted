@@ -11,6 +11,9 @@ header {
   text-align: center;
   background-color: black;
 }
+button {
+  cursor: pointer;
+}
 a {
   text-decoration: none;
 }
@@ -53,6 +56,92 @@ main {
 }
 blockquote {
   text-align: center;
+}
+#bnSButton {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+#buttonImg {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 98px;
+  height: 98px;
+  border-radius: 50%;
+}
+#buttonImg:hover, #bnSButton:hover {
+  transform: scale(1.01);
+}
+#buttonImg:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+#bnSPopUp {
+  visibility: hidden;
+  position: fixed;
+  width: 500px;
+  height: 340px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+  border-radius: 10%;
+  text-align: center;
+  background-color: #8677a8;
+}
+#xButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#xButtonImg:hover, #xButton:hover {
+  transform: scale(1.01);
+}
+#xButtonImg:hover {
+  background-color: rgba(200, 255, 255, 0.3);
+}
+#xButtonImg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.bnSinput {
+  margin-left: -50px;
+}
+.bnSinput > input:hover {
+  border-color: #6d8899;
+}
+#buy, #sell {
+  width: 40px;
+  height: 25px;
+  color: black;
+  background-color: #d3d8db;
+  margin-right: 10px;
+}
+#buy {
+  background-color: #4a6078;
+  width: 40px;
+  height: 25px;
+}
+#buy:hover, #sell:hover, #submit:hover {
+  background-color: #6d8899;
 }
 footer {
   background-color: #c7c7c7;
