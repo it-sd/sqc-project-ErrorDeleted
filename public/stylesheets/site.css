@@ -11,9 +11,6 @@ header {
   text-align: center;
   background-color: black;
 }
-button {
-  cursor: pointer;
-}
 a {
   text-decoration: none;
 }
@@ -56,6 +53,19 @@ main {
 }
 blockquote {
   text-align: center;
+}
+#events {
+  visibility: hidden;
+  position: fixed;
+  width: 500px;
+  height: 340px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+  border-radius: 10%;
+  text-align: center;
+  background-color: #8677a8;
 }
 #bnSButton {
     position: fixed;
@@ -122,10 +132,10 @@ blockquote {
   height: 40px;
   border-radius: 50%;
 }
-.bnSinput {
+.bnSTag {
   margin-left: -50px;
 }
-.bnSinput > input:hover {
+.bnSinput:hover {
   border-color: #6d8899;
 }
 #buy, #sell {
@@ -137,11 +147,10 @@ blockquote {
 }
 #buy {
   background-color: #4a6078;
-  width: 40px;
-  height: 25px;
 }
 #buy:hover, #sell:hover, #submit:hover {
   background-color: #6d8899;
+  cursor: pointer;
 }
 footer {
   background-color: #c7c7c7;

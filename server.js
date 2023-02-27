@@ -21,4 +21,11 @@ express()
     res.render('pages/about')
   })
 
+  .post('/about', async function (req, res) {
+    const isValid = true
+    res
+    .set({ 'Content-Type': 'application/json' })
+    .json({ success: isValid })
+  })
+
   .listen(PORT, () => console.log(`Listening on ${PORT}`))

@@ -12,7 +12,7 @@ CREATE TABLE items (
   itemId SERIAL PRIMARY KEY,
   categoryId INTEGER NOT NULL,
   price INTEGER NOT NULL,
-  forSale INTEGER NOT NULL,
+  forSale INTEGER NOT NULL, /*0=buy 1=sell 2=sold*/
   quanity INTEGER NOT NULL,
 ); /*categoryId = FK*/
 

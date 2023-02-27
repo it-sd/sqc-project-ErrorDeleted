@@ -4,18 +4,25 @@
   <h1>Place an Order for...</h1>
   <button id="buy" type="button">Buy</button>
   <button id="sell" type="button">Sell</button>
-  <p class="bnSinput">Name:<input type="text" placeholder="Name of product"></p>
-  <p class="bnSinput">Quanity:<input type="text" placeholder="Amount of product"></p>
-  <p class="bnSinput">Price:<input type="text" placeholder="Price per product"></p>
+  <p class="bnSTag">Name:<input class="bnSinput" type="text" placeholder="Name of product"></p>
+  <p class="bnSTag">Quanity:<input class="bnSinput" type="text" placeholder="Amount of product"></p>
+  <p class="bnSTag">Price:<input class="bnSinput" type="text" placeholder="Price per product"></p>
   <button id="submit" type="button">Post Request</button>
 </span>
+<span id="events"></span>
 <button id="bnSButton" type="button"><img id="buttonImg" src="/images/buy&SellButton.png"></button>
 <script>
   //-\\ ** Event listeners for ALL button events ** //-\\
   const bnSButton = document.getElementById("bnSButton")
   const bnSPopUp = document.getElementById("bnSPopUp")
   const xButton = document.getElementById("xButton")
-  const submit = document.getElementById("submit")
+  const submit = document.querySelector('#submit')
+  const bnSinput = document.querySelector('.bnSinput')
+  const buy = document.getElementById("buy")
+  const sell = document.getElementById("sell")
+  const events = document.querySelector('#events')
+  let status = 0; // 0=buy 1=sell 2=sold
+
   // BuynSell button (Right Corner) -> Popup Open
   bnSButton.addEventListener("click", function() {
     bnSPopUp.setAttribute('style', 'visibility: visible')
@@ -24,7 +31,49 @@
   xButton.addEventListener("click", function() {
     bnSPopUp.setAttribute('style', 'visibility: hidden')
   });
-  // Submit Comming Soon
+  // Migrating buy & sell
+  buy.addEventListener("click", function() {
+    sell.setAttribute('style', 'background-color: #d3d8db')
+    buy.setAttribute('style', 'background-color: #4a6078')
+    status = 0;
+  });
+  sell.addEventListener("click", function() {
+    buy.setAttribute('style', 'background-color: #d3d8db')
+    sell.setAttribute('style', 'background-color: #4a6078')
+    status = 1;
+  });
+  // Detecting input -> Submit Enabled [COMMING SOON]
+  // bnSinput.addEventListener("input", function() {
+  //   if(this.value !== "") {submit.disabled = false;} else {submit.disabled = true;}
+  // });
+  // Submit Logging -> Fail or Pass
+  const submitIt = async function () {
+    try {
+    events.innerHTML = '<h1>Please wait</h1>'
+    const response = await fetch('/about', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        entry1: bnSinput.value
+      })
+      })
+    if (response.ok) {
+      const result = await response.json()
+      if (result.success === true) {
+        bnSPopUp.setAttribute('style', 'visibility: hidden')
+        events.setAttribute('style', 'visibility: visible')
+        events.innerHTML = '<h1>Success!</h1>'
+        return
+      }
+    }
+    } catch (e) { }
+    events.innerHTML = '<h1>Server error</h1>'
+    }
+  submit.addEventListener('click', (e) => submitIt())
+
 </script>
 <footer>
   <h2>About</h2>
