@@ -9,7 +9,7 @@
   <p class="bnSTag">Price:<input class="bnSinput" type="text" placeholder="Price per product"></p>
   <button id="submit" type="button">Post Request</button>
 </span>
-<span id="events"></span>
+<span id="events" style="visibility: hidden;"><h1></h1><button id="eventButton" type="button"><img id="xButtonImg" src="/images/xButton.png"></button></span>
 <button id="bnSButton" type="button"><img id="buttonImg" src="/images/buy&SellButton.png"></button>
 <script>
   //-\\ ** Event listeners for ALL button events ** //-\\
@@ -21,8 +21,13 @@
   const buy = document.getElementById("buy")
   const sell = document.getElementById("sell")
   const events = document.querySelector('#events')
+  const eventButton = document.getElementById("eventButton")
   let status = 0; // 0=buy 1=sell 2=sold
 
+  // Clear Function
+  // function clearTextbox (tagName) {
+  //   tagName.value = ""
+  // }
   // BuynSell button (Right Corner) -> Popup Open
   bnSButton.addEventListener("click", function() {
     bnSPopUp.setAttribute('style', 'visibility: visible')
@@ -42,6 +47,10 @@
     sell.setAttribute('style', 'background-color: #4a6078')
     status = 1;
   });
+  // Event -> Closed
+  eventButton.addEventListener("click", function() {
+    events.setAttribute('style', 'visibility: hidden')
+  });
   // Detecting input -> Submit Enabled [COMMING SOON]
   // bnSinput.addEventListener("input", function() {
   //   if(this.value !== "") {submit.disabled = false;} else {submit.disabled = true;}
@@ -49,7 +58,8 @@
   // Submit Logging -> Fail or Pass
   const submitIt = async function () {
     try {
-    events.innerHTML = '<h1>Please wait</h1>'
+    events.setAttribute('style', 'visibility: visible')
+    events.firstElementChild.innerHTML = '<h1>Please wait</h1>'
     const response = await fetch('/about', {
       method: 'POST',
       headers: {
@@ -64,13 +74,13 @@
       const result = await response.json()
       if (result.success === true) {
         bnSPopUp.setAttribute('style', 'visibility: hidden')
-        events.setAttribute('style', 'visibility: visible')
-        events.innerHTML = '<h1>Success!</h1>'
+        // clearTextbox(bnSinput)
+        events.firstElementChild.innerHTML = '<h1>Success!</h1>'
         return
       }
     }
     } catch (e) { }
-    events.innerHTML = '<h1>Server error</h1>'
+    events.firstElementChild.innerHTML = '<h1>Server error</h1>'
     }
   submit.addEventListener('click', (e) => submitIt())
 

@@ -106,7 +106,7 @@ blockquote {
   text-align: center;
   background-color: #8677a8;
 }
-#xButton {
+#xButton, #eventButton {
   position: absolute;
   top: 0;
   right: 0;
